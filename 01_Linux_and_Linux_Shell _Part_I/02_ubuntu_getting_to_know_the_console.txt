@@ -1,0 +1,102 @@
+Commands and explanation:
+
+Check user we are logged with:
+    whoami
+
+Check dir we are in:
+    pwd
+
+List all files:
+    ls
+
+List all files, including hidden ones:
+    ls -la
+
+List all files as a list [-l], including hidden [a], showing human readable size [h], and sort them by date modified [t]:
+    ls -laht
+
+Note:
+Hidden files, start with dot symbol (.)
+
+Other way to list files:
+    ll
+
+
+Change directory:
+    cd
+
+Change directory to dir "etc":
+    cd /etc
+
+List files that start with specific pattern:
+    [in case we are already in /etc]:
+        ls os*
+    result:
+        os-release
+    
+    [in case we are not in /etc dir]:
+        ls /etc/os*
+    result:
+        os-release
+
+Check ubuntu distro and version:
+    cat /etc/os-release # More specific regarding distro and version
+        or
+    uname -a # Returns information about machine as well, such as hostname, architecture, etc
+
+Get hostname of the machine:
+    hostname
+    cat /etc/hostname
+
+Change hostname of the machine [requires sudo permission]:
+    sudo hostnamectl set-hostname 'vidra'
+    bash
+    or
+    logout - login 
+    # changes to take effect
+
+Get IP addresses of the machine on all interfaces:
+    hostname -I
+
+
+Return to home directory:
+    cd
+    or
+    cd ~
+Note:
+    Depends on user we are logged in.
+    If we are logged with admin user, cd or cd ~, will return us to /home/admin/
+
+
+Get current date:
+    date
+    result:
+        4.07.2024 (чт) 22:53:58 EEST
+        
+Get date in format "YYYY-MM-DD":
+    date +%Y-%m-%d
+    result:
+        2024-07-04
+
+Open calendar in command line [alpine]:
+    cal -3
+    result:
+        prints 3 calendars in command line
+
+Check how long system is operating:
+    uptime
+    
+History of executed commands:
+    history
+    
+History of executed commands are also kept in:
+    file: .bash_history, located in user's home directory
+    for example:
+        for root:
+            /root/.bash_history
+        for admin:
+            /home/admin/.bash_history
+
+Note:
+    Some commands are not here and there is a perfect explanation for this. 
+    The reason is that they are kept in a buffer and are stored on the disk only when certain events occur, like session end.
